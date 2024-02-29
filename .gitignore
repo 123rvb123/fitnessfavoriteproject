@@ -1,3 +1,5 @@
+CONNECTIE="mongodb+srv://remco:YTdPqcxyznWN7XuO@project.lisyl6v.mongodb.net/BackendProject"
+
 # Logs
 logs
 *.log

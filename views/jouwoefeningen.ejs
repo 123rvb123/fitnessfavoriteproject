@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>Fitness oefeningen</title>
+</head>
+<body>
+    <h1>Jouw oefeningen</h1>
+    <div class="exercise-card-container">
+        <% oefeningenlijst.forEach(function(oefening){ %> <!-- executing function for each element in array-->
+        <div class="exercise-card">
+            <h1> <%= oefening.titel %> </h1>
+            <p> <%= oefening.beschrijving %> </p>
+            <form class="exerciseForm" action="/add" method="post" onsubmit="addExercise(event, this)">
+                <input type="hidden" name="id" value="<%= oefening.id %>">
+                <button class="exerciseButton">
+                    <% if (oefening.favorite) { %>
+                        Unfavorite
+                    <% } else { %>
+                        Favorite
+                    <% } %>
+                </button>
+            </form>
+        </div>
+        <% }); %>
+    </div>
+
+    <!-- Need to find bettter way -->
+    <script>
+        function addExercise(event, form) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var formData = new FormData(form);
+            var urlEncodedData = new URLSearchParams(formData).toString();
+    
+            fetch("/add", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: urlEncodedData
+            })
+            .then(response => {
+                // Handle the response if needed
+                console.log("Form submitted successfully:", response);
+                // Reload the page
+                window.location.reload();
+            })
+            .catch(error => {
+                console.error("Error submitting form:", error);
+            });
+        }
+    </script>
+</body>
+</html>

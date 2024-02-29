@@ -1,0 +1,104 @@
+
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Style for the favorite/unfavorite button on hover */
+button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+/* Body style */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+/* Container style */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.exercise-card-container {
+  display: flex;
+  flex-direction: column; /* Display cards vertically */
+  align-items: center; /* Center cards horizontally */
+  margin-bottom: 30px; /* Increased margin-bottom */
+}
+
+/* Exercise card style */
+.exercise-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px; /* Increased margin-bottom */
+  width: 300px; /* Set a fixed width */
+  max-height: 200px; /* Set a maximum height */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Arrange content vertically */
+  justify-content: space-between; /* Space items evenly within card */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Title style */
+.exercise-card h1 {
+  font-size: 20px; /* Decrease font size */
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: left; /* Align titles to the left */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Display ellipsis for overflow text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Description style */
+.exercise-card p {
+  font-size: 14px; /* Decrease font size */
+  color: #666;
+  margin-top: 0;
+}
+
+/* Align button to the bottom */
+.exercise-card button {
+  align-self: flex-end;
+}
+
+
+/* Favorite button style */
+.exercise-card button {
+  padding: 8px 16px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Favorite button hover style */
+.exercise-card button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+/* Centering the exercise card */
+.exercise-card-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Heading style */
+h1 {
+  text-align: center;
+  color: #333;
+}
